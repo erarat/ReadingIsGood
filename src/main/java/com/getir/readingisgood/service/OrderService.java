@@ -16,6 +16,7 @@ import com.getir.readingisgood.reposityory.CustomerRepository;
 import com.getir.readingisgood.reposityory.OrderLineRepository;
 import lombok.RequiredArgsConstructor;
 import com.getir.readingisgood.reposityory.OrderRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
@@ -34,10 +35,9 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Transactional
+@Slf4j
 public class OrderService
 {
-    Logger log = LoggerFactory.getLogger(OrderService.class);
-
     private final OrderRepository orderRepository;
     private final OrderLineRepository orderLineRepository;
     private final CustomerRepository customerRepository;
