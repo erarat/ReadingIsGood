@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "c98d7df8-423a-4e57-aaba-1f5f934a1cfc",
+		"name": "ReadingIsGood-Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OrderApi",
+			"item": [
+				{
+					"name": "create-new-order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiYWxnIjoiSFMyNTYifQ.eyJpYXQiOjE2MzkyNDc2NjQsImV4cCI6MTYzOTMwMTY2NH0.GwdPQYV2I_uTKCwzBeyy9FJV-wKAb9nXITHiT1WMzWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order\": {\"orderLines\": [\r\n        {\r\n            \"productId\": 3,\r\n            \"quantity\":5\r\n        }\r\n    ],\r\n    \"address\": {\r\n        \"addressId\":1\r\n    }\r\n}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-order-by-id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiYWxnIjoiSFMyNTYifQ.eyJpYXQiOjE2MzkyNDc2NjQsImV4cCI6MTYzOTMwMTY2NH0.GwdPQYV2I_uTKCwzBeyy9FJV-wKAb9nXITHiT1WMzWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/get-order-by-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"get-order-by-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-orders-by-date-interval",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiYWxnIjoiSFMyNTYifQ.eyJpYXQiOjE2MzkyNDc2NjQsImV4cCI6MTYzOTMwMTY2NH0.GwdPQYV2I_uTKCwzBeyy9FJV-wKAb9nXITHiT1WMzWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2020-01-30 12:00\",\r\n    \"endDate\":\"2022-01-30 12:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/get-orders-by-date-interval",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"get-orders-by-date-interval"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CustomerApi",
+			"item": [
+				{
+					"name": "create-new-customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJwaG9uZU51bWJlciI6IjIiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzkyMjc0NDAsImV4cCI6MTYzOTI4MTQ0MH0.v48GdSaPwiNLnWMJFgjYzjYBSoK0PywYQb82qz9V4FQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"eray\",\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"password\",\r\n    \"address\": {\r\n        \"country\":\"Turkey\",\r\n        \"city\":\"Ankara\",\r\n        \"description\":\"Home address\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookApi",
+			"item": [
+				{
+					"name": "create-new-book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiYWxnIjoiSFMyNTYifQ.eyJpYXQiOjE2MzkyNDc2NjQsImV4cCI6MTYzOTMwMTY2NH0.GwdPQYV2I_uTKCwzBeyy9FJV-wKAb9nXITHiT1WMzWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Martin Eden\",\r\n    \"isbn\":\"1001\",\r\n    \"author\":\"Jack London\",\r\n    \"publishedYear\":\"1909-09-09\",\r\n    \"price\":90.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/books",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiYWxnIjoiSFMyNTYifQ.eyJpYXQiOjE2MzkyNDc2NjQsImV4cCI6MTYzOTMwMTY2NH0.GwdPQYV2I_uTKCwzBeyy9FJV-wKAb9nXITHiT1WMzWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":3,\r\n    \"quantity\":100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/update-stock",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"update-stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "track-stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiYWxnIjoiSFMyNTYifQ.eyJpYXQiOjE2MzkyNDc2NjQsImV4cCI6MTYzOTMwMTY2NH0.GwdPQYV2I_uTKCwzBeyy9FJV-wKAb9nXITHiT1WMzWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/track-stock/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"track-stock",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StatisticApi",
+			"item": [
+				{
+					"name": "monthly-statistic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiYWxnIjoiSFMyNTYifQ.eyJpYXQiOjE2MzkyNDc2NjQsImV4cCI6MTYzOTMwMTY2NH0.GwdPQYV2I_uTKCwzBeyy9FJV-wKAb9nXITHiT1WMzWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/monthly-statistics",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"monthly-statistics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
