@@ -29,7 +29,6 @@ public class BookService
 
     public PersistNewBookResponse persistNewBook(PersistNewBookRequest request)
     {
-
         BookEntity bookServiceByIsbn = this.bookRepository.findByIsbn(request.getIsbn());
         if (null != bookServiceByIsbn)
         {
